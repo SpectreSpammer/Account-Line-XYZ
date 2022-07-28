@@ -80,7 +80,8 @@ public class AccountingLineXyzXML implements Serializable {
     @XmlElement
     protected Double taxAmount;
 
-   protected Integer totalTaxAmount;
+
+    protected Double totalTaxAmount;
 
     @XmlElement
     protected String taxSurchargeCode2;

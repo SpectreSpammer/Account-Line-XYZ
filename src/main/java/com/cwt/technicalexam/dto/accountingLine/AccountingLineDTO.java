@@ -54,6 +54,8 @@ public class AccountingLineDTO {
 
     protected Double totalTaxAmount;
 
+    protected Double totalTaxSurcharge;
+
     protected String taxSurchargeCode2;
 
     protected String gstCode;
@@ -127,16 +129,22 @@ public class AccountingLineDTO {
 
 //        this.totalTaxAmount = getTotalTaxAmount();
         //setTotalTaxAmount(this.getTotalTaxAmount(getTotalTaxAmount()));
-        this.totalTaxAmount = this.getTotalTaxAmount(this.getTaxAmount());
 
+        this.qstAmount =accountingLineXyzXML.getQstAmount();
+        this.gstAmount = accountingLineXyzXML.getGstAmount();
         this.taxSurchargeCode2 = accountingLineXyzXML.getTaxSurchargeCode2();
         this.gstCode = accountingLineXyzXML.getGstCode();
-        this.gstAmount = accountingLineXyzXML.getGstAmount();
+
         this.gstPercent = accountingLineXyzXML.getGstPercent();
         this.qstCode = accountingLineXyzXML.getQstCode();
-        this.qstAmount =accountingLineXyzXML.getQstAmount();
         this.qstPercent = accountingLineXyzXML.getQstPercent();
+
         this.creditCardNumber = accountingLineXyzXML.getCreditCardNumber();
+
+        this.totalTaxAmount = this.TotalTaxAmount(this.getTaxAmount());
+        this.totalTaxSurcharge = this.getTotalTaxSurcharge(this.getGstAmount(),this.getQstAmount());
+
+
         this.creditCardCode = accountingLineXyzXML.getCreditCardCode();
         this.passengerName = accountingLineXyzXML.getPassengerName();
         this.travelerRefIDList = accountingLineXyzXML.getTravelerRefIDList();
@@ -157,7 +165,8 @@ public class AccountingLineDTO {
 
     }
 
-    public Double getTotalTaxAmount(Double taxAmount) {
+    public Double TotalTaxAmount(Double taxAmount) {
+
         Double result = taxAmount + getTotalTaxSurcharge(this.gstAmount,this.getQstAmount());
         return result;
     }
