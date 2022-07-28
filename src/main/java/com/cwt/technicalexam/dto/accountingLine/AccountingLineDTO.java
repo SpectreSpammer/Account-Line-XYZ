@@ -144,7 +144,6 @@ public class AccountingLineDTO {
         this.totalTaxAmount = this.TotalTaxAmount(this.getTaxAmount());
         this.totalTaxSurcharge = this.getTotalTaxSurcharge(this.getGstAmount(),this.getQstAmount());
 
-
         this.creditCardCode = accountingLineXyzXML.getCreditCardCode();
         this.passengerName = accountingLineXyzXML.getPassengerName();
         this.travelerRefIDList = accountingLineXyzXML.getTravelerRefIDList();
@@ -162,7 +161,6 @@ public class AccountingLineDTO {
         this.segmentNumber = accountingLineXyzXML.getSegmentNumber();
         this.id = accountingLineXyzXML.getId();
         this.elementId = accountingLineXyzXML.getElementId();
-
     }
 
     public Double TotalTaxAmount(Double taxAmount) {
