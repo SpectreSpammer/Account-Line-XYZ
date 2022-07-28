@@ -43,14 +43,14 @@ public class AccountingController {
 
 
     @PostMapping(value = "/accounting",consumes = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<AccountingLineXyzXML> saveEntity(@RequestBody AccountingLineXyzXML withoutSerial){
-        AccountingLineXyzXML save = accountingService.save(withoutSerial);
+    public ResponseEntity<AccountingLineXyzXML> saveEntity(@RequestBody AccountingLineXyzXML accountingLineXyzXML){
+        AccountingLineXyzXML save = accountingService.save(accountingLineXyzXML);
         return new ResponseEntity<>(save, HttpStatus.CREATED);
     }
 
     @PutMapping(value = "/accounting",consumes = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<AccountingLineXyzXML> updateEmployee(@RequestBody AccountingLineXyzXML withoutSerial){
-        AccountingLineXyzXML update = accountingService.save(withoutSerial);
+    public ResponseEntity<AccountingLineXyzXML> updateEmployee(@RequestBody AccountingLineXyzXML accountingLineXyzXML){
+        AccountingLineXyzXML update = accountingService.save(accountingLineXyzXML);
         return new ResponseEntity<>(update, HttpStatus.CREATED);
     }
 

@@ -14,8 +14,6 @@ public interface AccountingService {
 
     AccountingLineXyzXML save(AccountingLineXyzXML accountingLineXyzXML);
 
-    AccountingLineDTO update(AccountingLineDTO accountingLineXyzXML);
-
     AccountingLineXyzXML update(AccountingLineXyzXML accountingLineXyzXML);
 
     void deleteById(Integer index);

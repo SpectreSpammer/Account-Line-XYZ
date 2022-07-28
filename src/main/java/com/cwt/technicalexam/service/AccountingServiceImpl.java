@@ -31,12 +31,6 @@ public class AccountingServiceImpl implements AccountingService {
         return  new AccountingLineDTO(accountingLineXyzXML);
     }
 
-
-    @Override
-    public AccountingLineDTO update(AccountingLineDTO accountingLineXyzXML) {
-        return null;
-    }
-
     @Override
     public AccountingLineXyzXML save(AccountingLineXyzXML accountingLineXyzXML) {
         return accountingRepository.save(accountingLineXyzXML);
